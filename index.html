@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Advent JS</h1>
+</body>
+<script>
+    let array = [ 5 , 3, 9 , 1, 3, 2, 9, 5 ]
+
+    const presents = ( array ) => {
+
+        let result = array.filter((item, index) => array.indexOf(item) === index)
+        return result.sort((a, b) => a - b)
+    }
+
+    console.log(presents(array))
+</script>
+</html>
