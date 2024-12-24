@@ -9,16 +9,25 @@
     <h1>Advent JS</h1>
 </body>
 <script>
-    let array = [ 5 , 3, 9 , 1, 3, 2, 9, 5 ]
+    let names = [ "Ace" , "Gene" , "Nancy" , "Bob" , "Zed" , "Eve" , "Fred" , "Hugo" , "Ivy" , "Jill" , "Kip" , "Liam" , "Mia" , "Noa" , "Oda" , "Pam" , "Quin" , "Rex" , "Sky" , "Tia" , "Ula" , "Van" , "Wyn" , "Xoe" , "Yve" , "Zeb" , "pickachu" ]
 
-    const presents = ( array ) => {
+    const createFrame = ( names ) => {
 
-        let result = array.filter((item, index) => array.indexOf(item) === index)
-        return result.sort((a, b) => a - b)
+        const maxLength = Math.max(...names.map(str => str.length))
+        const border = "*".repeat(maxLength + 4)
+        let buffer = ""
+        
+        buffer += `${border}\n`
+        for (let name of names) {
+            buffer += `* ${name.padEnd(maxLength)} *\n`
+        }
+        buffer += `${border}\n`
+
+        return buffer
     }
 
-    console.log(presents(array))
+    console.log( createFrame( names ) )
 
-    
+
 </script>
 </html>
